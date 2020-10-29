@@ -1,0 +1,43 @@
+﻿@model WebBanHang.Models.GioHang
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GioHang</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="tentaikhoan" class="control-label"></label>
+                <input asp-for="tentaikhoan" class="form-control" />
+                <span asp-validation-for="tentaikhoan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="masp" class="control-label"></label>
+                <input asp-for="masp" class="form-control" />
+                <span asp-validation-for="masp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="soluong" class="control-label"></label>
+                <input asp-for="soluong" class="form-control" />
+                <span asp-validation-for="soluong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
